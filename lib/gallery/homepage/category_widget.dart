@@ -3,7 +3,7 @@ import 'package:flutter_template/model/category.dart';
 import 'package:flutter_template/styleguide.dart';
 import 'package:provider/provider.dart';
 
-import '../../app_state.dart';
+import '../../state/app_state.dart';
 
 class CategoryWidget extends StatelessWidget {
   final Category category;
