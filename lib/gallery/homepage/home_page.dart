@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/app_state.dart';
+import 'package:flutter_template/gallery/event_details/event_details_page.dart';
 import 'package:flutter_template/model/category.dart';
 import 'package:flutter_template/model/event.dart';
 import 'package:flutter_template/styleguide.dart';
-import 'package:flutter_template/views/event_details/event_details_page.dart';
-import 'package:flutter_template/views/homepage/category_widget.dart';
-import 'package:flutter_template/views/homepage/home_page_background.dart';
 import 'package:provider/provider.dart';
 
+import 'category_widget.dart';
 import 'event_widget.dart';
+import 'home_page_background.dart';
 
 class HomePage extends StatelessWidget {
   @override

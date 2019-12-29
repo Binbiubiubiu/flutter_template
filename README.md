@@ -1,16 +1,13 @@
 # flutter_template
 
-A new Flutter application.
+方便搭建flutter，顺便学习
 
-## Getting Started
+## 支持平台
 
-This project is a starting point for a Flutter application.
+android、ios、web
 
-A few resources to get you started if this is your first Flutter project:
+## 集成插件
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- flutter_localizations
+- provider
+- fluro

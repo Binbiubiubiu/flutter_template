@@ -25,6 +25,8 @@ dependencies:
   cupertino_icons: ^0.1.2
   provider: ^3.2.0
   fluro: ^1.5.1
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
