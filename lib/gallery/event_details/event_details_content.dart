@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/model/event.dart';
 import 'package:flutter_template/model/guest.dart';
-import 'package:flutter_template/styleguide.dart';
+import 'package:flutter_template/gallery/styleguide.dart';
 import 'package:provider/provider.dart';
 
 class EventDetailsContent extends StatelessWidget {

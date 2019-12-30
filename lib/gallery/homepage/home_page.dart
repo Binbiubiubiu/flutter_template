@@ -3,7 +3,7 @@ import 'package:flutter_template/state/app_state.dart';
 import 'package:flutter_template/gallery/event_details/event_details_page.dart';
 import 'package:flutter_template/model/category.dart';
 import 'package:flutter_template/model/event.dart';
-import 'package:flutter_template/styleguide.dart';
+import 'package:flutter_template/gallery/styleguide.dart';
 import 'package:provider/provider.dart';
 
 import 'category_widget.dart';

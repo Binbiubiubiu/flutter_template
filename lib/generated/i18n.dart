@@ -21,6 +21,7 @@ class S implements WidgetsLocalizations {
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
+  String get app_title => "Flutter Template";
   String get lang => "en";
 }
 
@@ -34,6 +35,8 @@ class $zh extends S {
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
+  @override
+  String get app_title => "Flutter 模版";
   @override
   String get lang => "中文";
 }

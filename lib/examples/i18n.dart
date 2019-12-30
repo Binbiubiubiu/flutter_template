@@ -26,6 +26,7 @@ class _I18nExampleState extends State<I18nExample> {
         onPressed: () {
           Locale option = Locale(i18nOptions[S.of(context).lang], '');
           Provider.of<I18nState>(context).updateLocale(option);
+//          S.delegate.load(Locale('en', ''));
         },
         child: Text(buttonText[S.of(context).lang]),
       ),

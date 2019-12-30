@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/model/event.dart';
 
-import '../../styleguide.dart';
+import '../styleguide.dart';
 
 class EventWidget extends StatelessWidget {
   final Event event;

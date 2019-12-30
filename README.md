@@ -11,3 +11,6 @@ android、ios、web
 - flutter_localizations
 - provider
 - fluro
+- rxdart
+- dio
+- shared_preferences
