@@ -1,6 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/examples/i18n.dart';
+import 'package:flutter_template/gallery/ui_01/homepage/home_page.dart';
 import 'package:flutter_template/route/application.dart';
 import 'package:flutter_template/route/routes.dart';
 import 'package:flutter_template/state/i18n_state.dart';
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       localeResolutionCallback: S.delegate.resolution(fallback: defaultLocale),
-      home: LoginPage(),
+      home: HomePage(),
     );
   }
 }
