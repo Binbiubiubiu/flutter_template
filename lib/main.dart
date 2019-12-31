@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_template/examples/i18n.dart';
 import 'package:flutter_template/gallery/ui_04/home_page.dart';
 import 'package:flutter_template/route/application.dart';
 import 'package:flutter_template/route/routes.dart';
@@ -61,7 +62,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      localeResolutionCallback: S.delegate.resolution(fallback: defaultLocale),
+      localeResolutionCallback: S.delegate.resolution(fallback: locale),
       home: HomePage(),
     );
   }

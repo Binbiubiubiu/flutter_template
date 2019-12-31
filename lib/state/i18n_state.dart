@@ -1,9 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
-const defaultLocale = Locale('zh', '');
-
 class I18nState extends ChangeNotifier {
-  Locale value = defaultLocale;
+  Locale value = Locale('zh', '');
 
   updateLocale(Locale locale) {
     value = locale;
