@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'TravelBean.dart';
 
 class DetailPage extends StatefulWidget {
@@ -24,7 +26,7 @@ class _DetailPageState extends State<DetailPage> {
               _buildSliverHead(),
               SliverToBoxAdapter(
                 child: _buildDetail(),
-              ),
+              )
             ],
           ),
           Padding(
@@ -91,7 +93,13 @@ class _DetailPageState extends State<DetailPage> {
               horizontal: 15,
             ),
             child: Text(
-              "Thebalearci Lsn,Thebalearci LsnThebalearci LsnThebalearci Lsn,Thebalearci Lsn,Thebalearci Lsn,Thebalearci Lsn,Thebalearci Lsn,Thebalearci Lsn",
+              "The balearic Lsnaled,The Lsnaled,The balea balearic Lsnaled,"
+              "The balearic Lsnaled,Lsnaled,The balea The balearic Lsnaled,"
+              "The balearic Lsnaled,Lsnaled,The balea The balearic Lsnaled,"
+              "The balearic Lsnaled,Lsnaled,The balea The balearic Lsnaled,"
+              "The balearic Lsnaled,Lsnaled,The balea The balearic Lsnaled,"
+              "The balearic Lsnaled,The balearic Lsnaled,The balea Lsnaled,"
+              "The balearic Lsnaled,The balearic Lsnaled,",
               style: TextStyle(
                 color: Colors.black38,
                 height: 1.4,
@@ -100,7 +108,7 @@ class _DetailPageState extends State<DetailPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
+            padding: EdgeInsets.only(
               left: 15,
               right: 30,
               top: 10,
@@ -124,7 +132,7 @@ class _DetailPageState extends State<DetailPage> {
                     color: Colors.deepOrange,
                     fontSize: 16,
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -159,16 +167,18 @@ class _DetailPageState extends State<DetailPage> {
       child: Row(
         children: <Widget>[
           ClipRRect(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(50),
             child: Image.asset(
               widget.bean.url,
-              width: 30,
-              height: 30,
+              width: 50,
+              height: 50,
               fit: BoxFit.cover,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10.0),
+            padding: const EdgeInsets.only(
+              left: 10,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -181,12 +191,12 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                 ),
                 Text(
-                  "Write,Wonderlust",
+                  "Writer,Wonderlust",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 14,
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -194,7 +204,7 @@ class _DetailPageState extends State<DetailPage> {
           Icon(
             Icons.share,
             color: Colors.black54,
-          )
+          ),
         ],
       ),
     );
@@ -240,70 +250,74 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    // TODO: implement build
-    return Stack(
-      children: <Widget>[
-        Hero(
-          tag: bean.url,
-          child: Image.asset(
-            bean.url,
-            width: MediaQuery.of(context).size.width,
-            height: expandedHeight,
-            fit: BoxFit.cover,
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.dark,
+      ),
+      child: Stack(
+        children: <Widget>[
+          Hero(
+            tag: bean.url,
+            child: Image.asset(
+              bean.url,
+              width: MediaQuery.of(context).size.width,
+              height: expandedHeight,
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-        Positioned(
-          top: expandedHeight - rounded_container_height - shrinkOffset,
-          left: 0,
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: rounded_container_height,
-            decoration: BoxDecoration(
+          Positioned(
+            top: expandedHeight - rounded_container_height - shrinkOffset,
+            left: 0,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: rounded_container_height,
+              decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
-                )),
-          ),
-        ),
-        Positioned(
-          top: expandedHeight - 120 - shrinkOffset,
-          left: 30,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                bean.name,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
                 ),
               ),
-              Text(
-                bean.location,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                ),
-              ),
-            ],
+            ),
           ),
-        )
-      ],
+          Positioned(
+            top: expandedHeight - 120 - shrinkOffset,
+            left: 30,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  bean.name,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                  ),
+                ),
+                Text(
+                  bean.location,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 
   @override
-  // TODO: implement maxExtent
   double get maxExtent => expandedHeight;
 
   @override
-  // TODO: implement minExtent
   double get minExtent => 0;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
-    // TODO: implement shouldRebuild
     return true;
   }
 }

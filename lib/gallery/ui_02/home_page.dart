@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter_template/gallery/ui_02/TravelBean.dart';
 
+import 'TravelBean.dart';
 import 'detail_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,8 +9,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        elevation: 0,
         backgroundColor: Colors.white,
+        elevation: 0,
         actions: <Widget>[
           Padding(
             padding: EdgeInsets.only(right: 15),
@@ -27,13 +25,12 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             child: Text(
               "Travel Blog",
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
+                fontSize: 30,
               ),
             ),
           ),
@@ -42,7 +39,7 @@ class HomePage extends StatelessWidget {
             child: TravelWidget(),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -59,7 +56,7 @@ class HomePage extends StatelessWidget {
                     color: Colors.deepOrange,
                     fontSize: 20,
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -94,12 +91,12 @@ class MostPopularWidget extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30.0, right: 10),
+                  padding: const EdgeInsets.only(bottom: 30, right: 10),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(5),
                     child: Image.asset(
                       bean.url,
-                      width: 150,
+                      width: 170,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -110,20 +107,26 @@ class MostPopularWidget extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
-                        bean.location,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
+                      Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          bean.location,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
                         ),
                       ),
-                      Text(
-                        bean.name,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
+                      Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          bean.name,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -157,7 +160,7 @@ class TravelWidget extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30.0, right: 10),
+                  padding: const EdgeInsets.only(bottom: 30, right: 10),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(5),
                     child: Image.asset(
@@ -165,6 +168,35 @@ class TravelWidget extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                       fit: BoxFit.cover,
                     ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 80,
+                  left: 15,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          bean.location,
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                      Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          bean.name,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Positioned(
@@ -183,30 +215,7 @@ class TravelWidget extends StatelessWidget {
                       size: 30,
                     ),
                   ),
-                ),
-                Positioned(
-                  bottom: 80,
-                  left: 15,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        bean.location,
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 20,
-                        ),
-                      ),
-                      Text(
-                        bean.name,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                )
               ],
             ),
           ),
