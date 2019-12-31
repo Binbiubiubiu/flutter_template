@@ -1,22 +1,36 @@
+import 'dart:io';
+
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_template/examples/i18n.dart';
-import 'package:flutter_template/gallery/ui_01/homepage/home_page.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_template/gallery/ui_02/home_page.dart';
 import 'package:flutter_template/route/application.dart';
 import 'package:flutter_template/route/routes.dart';
 import 'package:flutter_template/state/i18n_state.dart';
-import 'package:flutter_template/views/login.dart';
 import 'package:provider/provider.dart';
 import './generated/i18n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider<I18nState>(create: (context) => I18nState()),
-    ],
-    child: MyApp(),
-  ));
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<I18nState>(create: (context) => I18nState()),
+      ],
+      child: MyApp(),
+    ),
+  );
+
+  // 设置状态栏颜色
+  if (Platform.isAndroid) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: null,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light,
+      ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
