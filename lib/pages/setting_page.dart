@@ -15,7 +15,7 @@ class _SettingPageState extends State<SettingPage> {
 
   @override
   Widget build(BuildContext context) {
-//    final pkg = Provider.of<PkgState>(context);
+    final pkg = Provider.of<PkgState>(context);
     var localeName = Provider.of<I18nState>(context).localeName;
 
     return Scaffold(
@@ -30,20 +30,20 @@ class _SettingPageState extends State<SettingPage> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-//            ListTile(
-//              dense: true,
-//              leading: Icon(Icons.settings),
-//              title: Text("App名称"),
-//              trailing: Text(pkg.appName),
-//            ),
-//            Divider(),
-//            ListTile(
-//              dense: true,
-//              leading: Icon(Icons.settings),
-//              title: Text("版本"),
-//              trailing: Text(pkg.version),
-//            ),
-//            Divider(),
+            ListTile(
+              dense: true,
+              leading: Icon(Icons.settings),
+              title: Text("App名称"),
+              trailing: Text(pkg.appName),
+            ),
+            Divider(),
+            ListTile(
+              dense: true,
+              leading: Icon(Icons.settings),
+              title: Text("版本"),
+              trailing: Text(pkg.version),
+            ),
+            Divider(),
             ListTile(
               dense: true,
               onTap: () {
