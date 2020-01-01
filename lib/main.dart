@@ -1,11 +1,10 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_template/examples/i18n.dart';
-import 'package:flutter_template/gallery/ui_01/homepage/home_page.dart';
+import 'package:flutter_template/examples/camera.dart';
+import 'package:flutter_template/examples/url.dart';
 import 'package:flutter_template/route/application.dart';
 import 'package:flutter_template/route/routes.dart';
 import 'package:flutter_template/state/i18n_state.dart';
-import 'package:flutter_template/views/login.dart';
 import 'package:provider/provider.dart';
 import './generated/i18n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -47,8 +46,8 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      localeResolutionCallback: S.delegate.resolution(fallback: defaultLocale),
-      home: HomePage(),
+      localeResolutionCallback: S.delegate.resolution(fallback: locale),
+      home: UrlExample(),
     );
   }
 }

@@ -14,3 +14,6 @@ android、ios、web
 - rxdart
 - dio
 - shared_preferences
+- url_lanncher
+- path
+- path_provider
