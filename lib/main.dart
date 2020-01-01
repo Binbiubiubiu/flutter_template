@@ -5,6 +5,7 @@ import 'package:flutter_template/pages/setting_page.dart';
 import 'package:flutter_template/route/application.dart';
 import 'package:flutter_template/route/routes.dart';
 import 'package:flutter_template/state/i18n_state.dart';
+import 'package:flutter_template/state/pkg_state.dart';
 import 'package:provider/provider.dart';
 import './generated/i18n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -12,7 +13,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 void main() {
   runApp(MultiProvider(
     providers: [
-//      Provider<PkgState>(create: (context) => PkgState()),
+      Provider<PkgState>(create: (context) => PkgState()),
       ChangeNotifierProvider<I18nState>(create: (context) => I18nState()),
     ],
     child: MyApp(),
