@@ -30,7 +30,5 @@ class Routes {
         handler: demoRouteHandler, transitionType: TransitionType.inFromLeft);
     router.define(demoFunc, handler: demoFunctionHandler);
     router.define(deepLink, handler: deepLinkHandler);
-
-    router.define(i18n, handler: i18nHandler);
   }
 }

@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 
-Dio initHttpUtil() {
+Dio initRequestUtil() {
   BaseOptions options = new BaseOptions(
-    baseUrl: "https://www.xx.com/api",
+    baseUrl: "http://192.168.1.102:3001",
     connectTimeout: 5000,
     receiveTimeout: 3000,
   );
@@ -13,15 +13,15 @@ Dio initHttpUtil() {
   return dio;
 }
 
-Dio httpUtil = initHttpUtil();
+Dio RequestUtil = initRequestUtil();
 
 class AuthInterceptor extends InterceptorsWrapper {
   @override
   Future onRequest(RequestOptions options) {
 //    print("REQUEST[${options?.method}] => PATH: ${options?.path}");
-    httpUtil.interceptors.requestLock.lock();
+    RequestUtil.interceptors.requestLock.lock();
     options.headers["token"] = "12";
-    httpUtil.interceptors.requestLock.unlock();
+    RequestUtil.interceptors.requestLock.unlock();
     return super.onRequest(options);
   }
 

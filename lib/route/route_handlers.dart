@@ -12,7 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_template/examples/fluro/demo/demo_simple_component.dart';
 import 'package:flutter_template/examples/fluro/helpers/color_helpers.dart';
 import 'package:flutter_template/examples/fluro/home/home_component.dart';
-import 'package:flutter_template/examples/i18n.dart';
 
 var rootHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -78,9 +77,4 @@ var deepLinkHandler = Handler(
   }
   return DemoSimpleComponent(
       message: "DEEEEEP LINK!!!", color: color, result: result);
-});
-
-var i18nHandler = Handler(
-    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-  return I18nExample();
 });

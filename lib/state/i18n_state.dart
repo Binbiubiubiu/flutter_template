@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 class I18nState extends ChangeNotifier {
-  Locale value = Locale('zh', '');
+  Locale _locale = Locale('zh', '');
+  String _name = "中文";
 
-  updateLocale(Locale locale) {
-    value = locale;
+  get locale => _locale;
+  get localeName => _name;
+
+  updateLocale(Locale locale, String name) {
+    _locale = locale;
+    _name = name;
     notifyListeners();
   }
 }
