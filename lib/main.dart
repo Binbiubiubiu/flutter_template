@@ -1,14 +1,17 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_picker/PickerLocalizationsDelegate.dart';
-import 'package:flutter_template/pages/setting_page.dart';
-import 'package:flutter_template/route/application.dart';
-import 'package:flutter_template/route/routes.dart';
-import 'package:flutter_template/state/i18n_state.dart';
-import 'package:flutter_template/state/pkg_state.dart';
+import './pages/login/login_page.dart';
+import 'package:flutter_template/utils/vw_util.dart';
 import 'package:provider/provider.dart';
-import './generated/i18n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
+import './route/application.dart';
+import './route/routes.dart';
+import './state/i18n_state.dart';
+import './state/pkg_state.dart';
+import './style/theme.dart';
+import './generated/i18n.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -33,10 +36,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Flutter Template',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xFFFFFFFF),
-        primaryColor: Color(0xFFFF4700),
-      ),
+      theme: defaultTheme,
       onGenerateTitle: (context) {
         return S.of(context).app_title;
       },
@@ -50,7 +50,9 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       localeResolutionCallback: S.delegate.resolution(fallback: locale),
-      home: SettingPage(),
+      home: ScreenBuilder(
+        child: LoginPage(),
+      ),
     );
   }
 }
