@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 ThemeData defaultTheme = ThemeData(
@@ -6,6 +7,8 @@ ThemeData defaultTheme = ThemeData(
   primaryColorDark: Color(0xFFC7252B),
 //  splashColor: Colors.transparent,
 //  highlightColor: Color(0x20D3171A),
-  scaffoldBackgroundColor: Color(0xFFFFFFFF),
-  accentColor: Color(0xFFC7252B),
+  cursorColor: Color(0xFFEA101D),
+  cupertinoOverrideTheme: CupertinoThemeData(
+    primaryColor: Color(0xFFD3171A),
+  ),
 );

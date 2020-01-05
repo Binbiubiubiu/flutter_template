@@ -28,29 +28,29 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Spacer(),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .75,
+              MaterialButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) {
+                      return PhonePage();
+                    }),
+                  );
+                },
+                minWidth: MediaQuery.of(context).size.width * .75,
                 height: px2dp(120),
-                child: FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) {
-                        return PhonePage();
-                      }),
-                    );
-                  },
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(px2dp(60)),
-                  ),
-                  highlightColor: Color(0x20D3171A),
-                  splashColor: Colors.transparent,
-                  child: Text(
-                    "手机号登录",
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontWeight: FontWeight.w400,
-                    ),
+                elevation: 0.0,
+                highlightElevation: 0.0,
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(px2dp(60)),
+                ),
+                highlightColor: Color(0x20D3171A),
+                splashColor: Colors.transparent,
+                child: Text(
+                  "手机号登录",
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),

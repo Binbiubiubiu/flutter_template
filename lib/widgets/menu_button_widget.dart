@@ -24,10 +24,7 @@ class MenuButtonWidget extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(30),
             ),
-            child: IconTheme(
-              data: IconThemeData(color: Colors.white),
-              child: icon,
-            ),
+            child: icon,
           ),
           SizedBox(height: 8),
           Text(

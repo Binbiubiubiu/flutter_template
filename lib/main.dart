@@ -1,7 +1,8 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_picker/PickerLocalizationsDelegate.dart';
-import './pages/login/login_page.dart';
+import 'package:flutter_template/pages/home/home_page.dart';
+import 'package:flutter_template/pages/login/login_page.dart';
 import 'package:flutter_template/utils/vw_util.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

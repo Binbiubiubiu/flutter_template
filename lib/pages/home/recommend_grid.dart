@@ -62,27 +62,18 @@ class _RecommendGridState extends State<RecommendGrid> {
 
     header.children.addAll([
       Spacer(),
-      InkWell(
-        radius: 40,
-        borderRadius: BorderRadius.circular(10),
-        onTap: () {},
-        child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 8,
-            vertical: 2,
-          ),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.grey[400],
-              width: .4,
-            ),
-            borderRadius: BorderRadius.circular(10),
-          ),
+      SizedBox(
+        width: 80,
+        height: 24,
+        child: OutlineButton(
+          onPressed: () {},
+          highlightedBorderColor: Theme.of(context).highlightColor,
+          splashColor: Colors.transparent,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           child: Text(
             "歌单广场",
-            style: TextStyle(
-              fontSize: 12.0,
-            ),
+            style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w400),
           ),
         ),
       )
@@ -102,6 +93,7 @@ class _RecommendGridState extends State<RecommendGrid> {
           _renderHeader(),
           GridView.count(
             shrinkWrap: true,
+            primary: true,
             physics: NeverScrollableScrollPhysics(),
             padding: EdgeInsets.symmetric(vertical: 14),
             crossAxisCount: 3,

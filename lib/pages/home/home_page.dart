@@ -1,8 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_template/pages/home/recommend_grid.dart';
 import 'package:flutter_template/utils/vw_util.dart';
 import 'package:flutter_template/widgets/menu_button_widget.dart';
+
+import 'bottom_player.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -34,6 +37,7 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.menu),
@@ -63,6 +67,7 @@ class _HomePageState extends State<HomePage>
       body: RefreshIndicator(
         onRefresh: () async {},
         child: ListView(
+          physics: ClampingScrollPhysics(),
           children: <Widget>[
             _Bannar(
               banners: [
@@ -77,11 +82,21 @@ class _HomePageState extends State<HomePage>
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  MenuButtonWidget(icon: Icon(Icons.menu), text: "每日歌单"),
-                  MenuButtonWidget(icon: Icon(Icons.menu), text: "每日歌单"),
-                  MenuButtonWidget(icon: Icon(Icons.menu), text: "每日歌单"),
-                  MenuButtonWidget(icon: Icon(Icons.menu), text: "每日歌单"),
-                  MenuButtonWidget(icon: Icon(Icons.menu), text: "每日歌单"),
+                  MenuButtonWidget(
+                      icon: Icon(Icons.menu, color: Colors.white),
+                      text: "每日歌单"),
+                  MenuButtonWidget(
+                      icon: Icon(Icons.menu, color: Colors.white),
+                      text: "每日歌单"),
+                  MenuButtonWidget(
+                      icon: Icon(Icons.menu, color: Colors.white),
+                      text: "每日歌单"),
+                  MenuButtonWidget(
+                      icon: Icon(Icons.menu, color: Colors.white),
+                      text: "每日歌单"),
+                  MenuButtonWidget(
+                      icon: Icon(Icons.menu, color: Colors.white),
+                      text: "每日歌单"),
                 ],
               ),
             ),
@@ -91,58 +106,7 @@ class _HomePageState extends State<HomePage>
           ],
         ),
       ),
-      bottomSheet: BottomAppBar(
-        elevation: 0,
-        child: Container(
-          decoration: BoxDecoration(
-            border: Border(
-              top: BorderSide(
-                width: .5,
-                color: Theme.of(context).dividerColor,
-              ),
-            ),
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 14.0),
-          child: Row(
-            children: <Widget>[
-              CircleAvatar(
-                child: Image.network(
-                    "https://i2.hdslb.com/bfs/face/8944fec41064157b6097c20f48a76acfe3ac391e.png@204w_204h_1c_100q.webp"),
-              ),
-              SizedBox(width: 10.0),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text(
-                    "与我无关",
-                    style: Theme.of(context).textTheme.subtitle,
-                  ),
-                  Text(
-                    "横滑动可以切换歌曲",
-                    style: Theme.of(context).textTheme.caption,
-                  ),
-                ],
-              ),
-              Spacer(),
-              Row(
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(Icons.play_circle_outline),
-                    iconSize: 40,
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.playlist_play),
-                    iconSize: 40,
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+      bottomSheet: BottomPlayer(),
     );
   }
 }
@@ -168,15 +132,19 @@ class _Bannar extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 14.0, right: 14.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.network(
-                    banners[i],
+                  child: CachedNetworkImage(
+                    imageUrl: banners[i],
                     fit: BoxFit.cover,
                   ),
                 ),
               );
             },
             itemCount: banners.length,
-            pagination: new SwiperPagination(),
+            pagination: new SwiperPagination(
+              builder: const DotSwiperPaginationBuilder(
+                color: Color(0x88FFFFFF),
+              ),
+            ),
             autoplay: true,
 //            control: new SwiperControl(),
           ),
